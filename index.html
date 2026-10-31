@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latuslab sahifasi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Latuslab — Telegram bots, websites and AI systems from Uzbekistan. 100+ projects delivered.">
+<meta name="theme-color" content="#0A0A0B">
+<meta property="og:title" content="Latuslab sahifasi">
+<meta property="og:description" content="Telegram bots, websites and AI from Uzbekistan.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- shared SVG filters: paper shadows -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ps" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".55"/>
+    </filter>
+    <filter id="ps-sm" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".5"/>
+    </filter>
+    <symbol id="mark" viewBox="0 0 32 32">
+      <path d="M2 2h20l8 8v20H2z" fill="#C6FF3D"/>
+      <path d="M22 2v8h8z" fill="#7FAE12"/>
+      <path d="M9 8.5v14.5h11" fill="none" stroke="#0A0A0B" stroke-width="3.6" stroke-linecap="square"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="sheet sheet-1"></div>
+  <div class="sheet sheet-2"></div>
+  <div class="sheet sheet-3">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <svg class="loader-mark"><use href="#mark"/></svg>
+        <span class="wordmark">latus<b>lab</b></span>
+      </div>
+      <div class="loader-count"><span id="loaderNum">0</span>%</div>
+    </div>
+  </div>
+</div>
+
+<!-- language wipe -->
+<div class="wipe wipe-o" id="wipeO" aria-hidden="true"></div>
+<div class="wipe" id="wipe" aria-hidden="true"><svg class="wipe-mark"><use href="#mark"/></svg></div>
+
+<!-- cursor -->
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-row">
+    <a class="logo" href="#top" aria-label="Latuslab">
+      <svg class="logo-mark"><use href="#mark"/></svg>
+      <span class="wordmark">latus<b>lab</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services" data-i18n="nav.services">Xizmatlar</a>
+      <a href="#projects" data-i18n="nav.projects">Loyihalar</a>
+      <a href="#process" data-i18n="nav.process">Jarayon</a>
+      <a href="#contact" data-i18n="nav.contact">Aloqa</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="uz">UZ</button>
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="en">EN</button>
+        <span class="lang-pill" aria-hidden="true"></span>
+      </div>
+      <a class="btn btn-lime btn-sm magnetic" href="https://t.me/neindev" target="_blank" rel="noopener">
+        <span class="btn-in"><span data-i18n="nav.cta">Yozish</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z" fill="currentColor"/></svg></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap hero-copy">
+    <p class="eyebrow hero-eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">Telegram botlar · Saytlar · Sun'iy intellekt</span></p>
+    <h1 class="hero-title" data-i18n="hero.title" data-split>Biznesingiz uchun ishlaydigan bot, sayt va sun'iy intellekt yaratamiz.</h1>
+    <div class="hero-bottom">
+      <p class="hero-sub" data-i18n="hero.sub">Latuslab — O'zbekistondagi 4+ dasturchidan iborat jamoa.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-lime magnetic" href="#projects"><span class="btn-in"><span data-i18n="hero.cta1">Loyihalarni ko'rish</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span></a>
+        <a class="btn btn-ghost magnetic" href="https://t.me/neindev" target="_blank" rel="noopener"><span class="btn-in"><span data-i18n="hero.cta2">Telegramda yozish</span><span class="handle">@neindev</span></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- papercut scene: shadowed static layers (.ls) + unshadowed animated parts (.la) -->
+  <div class="scene" id="scene" aria-hidden="true">
+    <!-- L0: sky, sun, stars -->
+    <div class="layer" data-depth="0.08"><div class="lp"><svg class="ls flat" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+      <circle cx="960" cy="235" r="176" fill="#1E2025"/>
+      <circle cx="960" cy="235" r="142" fill="#FF5A1F" filter="url(#ps)"/>
+      <circle cx="960" cy="235" r="112" fill="#A8E021" filter="url(#ps)"/>
+      <circle cx="960" cy="235" r="80" fill="#C6FF3D" filter="url(#ps)"/>
+      <g fill="#F2F0EA" opacity=".85">
+        <path d="M120 90l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/>
+        <path d="M1130 300l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+      </g>
+      <g fill="#FF5A1F">
+        <path d="M640 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+        <path d="M360 200l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+      </g>
+    </svg></div></div>
+
+    <!-- L1: far hills + clouds -->
+    <div class="layer" data-depth="0.22"><div class="lp"><svg class="ls" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+      <g fill="#2A2D33">
+        <path d="M70 175a28 28 0 0 1 52-14 22 22 0 0 1 38 8 18 18 0 0 1 6 34H82a24 24 0 0 1-12-28z"/>
+        <path d="M1010 120a24 24 0 0 1 44-12 19 19 0 0 1 33 7 15 15 0 0 1 5 29h-72a20 20 0 0 1-10-24z"/>
+      </g>
+      <path d="M0 330C150 262 262 302 384 252c138-56 258 18 398-22 140-40 258 12 418-30v420H0z" fill="#17181C"/>
+    </svg></div></div>
+
+    <!-- L2: mid hills + laptop -->
+    <div class="layer" data-depth="0.4"><div class="lp">
+      <svg class="ls" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+        <rect x="662" y="228" width="232" height="154" rx="12" fill="#F2F0EA"/>
+        <rect x="674" y="240" width="208" height="124" rx="6" fill="#15161A"/>
+        <rect x="688" y="256" width="58" height="8" rx="4" fill="#C6FF3D"/>
+        <rect x="752" y="256" width="40" height="8" rx="4" fill="#5A5D63"/>
+        <rect x="702" y="276" width="96" height="8" rx="4" fill="#5A5D63"/>
+        <rect x="702" y="296" width="70" height="8" rx="4" fill="#F2F0EA"/>
+        <rect x="778" y="296" width="44" height="8" rx="4" fill="#FF5A1F"/>
+        <rect x="702" y="316" width="110" height="8" rx="4" fill="#5A5D63"/>
+        <rect x="688" y="336" width="34" height="8" rx="4" fill="#C6FF3D"/>
+        <path d="M634 382h288l-22 16H656z" fill="#D9D6CC"/>
+        <path d="M0 420c140-40 260-20 380-50 100-25 180 30 270 26h272c88 0 158-36 278-46v270H0z" fill="#22252A"/>
+      </svg>
+      <svg class="la" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+        <rect class="caret" x="728" y="334" width="4" height="12" fill="#C6FF3D"/>
+      </svg>
+    </div></div>
+
+    <!-- L3: lime hills + phone + bot -->
+    <div class="layer" data-depth="0.62"><div class="lp">
+      <svg class="ls" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+        <rect x="196" y="244" width="136" height="240" rx="20" fill="#F2F0EA"/>
+        <rect x="207" y="262" width="114" height="196" rx="10" fill="#15161A"/>
+        <rect x="248" y="250" width="32" height="5" rx="2.5" fill="#D9D6CC"/>
+        <line x1="1000" y1="362" x2="1000" y2="334" stroke="#F2F0EA" stroke-width="7"/>
+        <rect x="936" y="360" width="128" height="104" rx="30" fill="#F2F0EA"/>
+        <rect x="954" y="380" width="92" height="52" rx="17" fill="#15161A"/>
+        <path d="M0 480c150-35 260-10 360-25 110-17 200 15 320 7 140-10 260 28 380 8 60-10 110-5 140-8v158H0z" fill="#C6FF3D"/>
+      </svg>
+      <svg class="la" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+        <rect class="bub" x="218" y="282" width="72" height="22" rx="11" fill="#C6FF3D"/>
+        <rect class="bub" x="240" y="314" width="70" height="22" rx="11" fill="#FF5A1F"/>
+        <rect class="bub" x="218" y="346" width="56" height="22" rx="11" fill="#C6FF3D"/>
+        <g class="typing" fill="#D9D6CC"><circle cx="252" cy="390" r="4"/><circle cx="266" cy="390" r="4"/><circle cx="280" cy="390" r="4"/></g>
+        <circle class="antenna" cx="1000" cy="328" r="10" fill="#FF5A1F"/>
+        <g class="eyes" fill="#C6FF3D"><circle cx="981" cy="406" r="8"/><circle cx="1019" cy="406" r="8"/></g>
+      </svg>
+    </div></div>
+
+    <!-- L4: front paper -->
+    <div class="layer" data-depth="0.85"><div class="lp"><svg class="ls" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+      <path d="M0 560c180-40 330-12 500-35 180-25 340 30 510 5 80-12 150-8 190-10v100H0z" fill="#F2F0EA"/>
+      <g fill="#D9D6CC"><path d="M120 560l14-34 14 34z"/><path d="M146 560l10-24 10 24z"/></g>
+      <path d="M1080 540l12-30 12 30z" fill="#FF5A1F"/>
+    </svg></div></div>
+
+    <!-- L5: paper plane -->
+    <div class="layer plane-layer" data-depth="1.1"><div class="lp">
+      <svg class="la" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+        <path class="trail" d="M470 160c-60 40-140-20-230 30-60 34-120 10-160 30" fill="none" stroke="#FF5A1F" stroke-width="2.5" stroke-dasharray="6 9" opacity=".75"/>
+      </svg>
+      <div class="plane-fly"><div class="plane-float">
+        <svg class="ls plane-svg" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice">
+          <g transform="translate(470 120)">
+            <polygon points="0,34 104,0 62,62" fill="#F2F0EA"/>
+            <polygon points="0,34 62,62 46,40" fill="#D9D6CC"/>
+            <polygon points="46,40 62,62 50,70" fill="#A9A69C"/>
+          </g>
+        </svg>
+      </div></div>
+    </div></div>
+  </div>
+
+  <a class="scroll-hint" href="#services"><span data-i18n="hero.scroll">Pastga</span><i></i></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-label="Technologies">
+  <div class="marquee-track">
+    <div class="marquee-set">
+      <span>Python</span><i></i><span>Node.js</span><i></i><span>Telegram Bot API</span><i></i><span>React</span><i></i><span>FastAPI</span><i></i><span>PostgreSQL</span><i></i><span>Face recognition</span><i></i><span>YOLO</span><i></i><span>1C</span><i></i><span>Claude API</span><i></i><span>Hikvision</span><i></i><span>Vercel</span><i></i>
+    </div>
+    <div class="marquee-set" aria-hidden="true">
+      <span>Python</span><i></i><span>Node.js</span><i></i><span>Telegram Bot API</span><i></i><span>React</span><i></i><span>FastAPI</span><i></i><span>PostgreSQL</span><i></i><span>Face recognition</span><i></i><span>YOLO</span><i></i><span>1C</span><i></i><span>Claude API</span><i></i><span>Hikvision</span><i></i><span>Vercel</span><i></i>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-fade><span class="dot"></span><span data-i18n="services.eyebrow">Nima qilamiz</span></p>
+      <h2 class="sec-title" data-i18n="services.title" data-split>Har kuni qiladigan to'rt ishimiz.</h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc tilt" data-fade>
+        <div class="svc-glare"></div>
+        <span class="svc-ico-wrap"><svg class="svc-ico" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="46" fill="#22252A" filter="url(#ps-sm)"/>
+          <path d="M28 58 88 34 78 88 60 74 50 86 48 68z" fill="#F2F0EA" filter="url(#ps-sm)"/>
+          <path d="M48 68 78 44 60 74z" fill="#C6FF3D" filter="url(#ps-sm)"/>
+        </svg></span>
+        <h3 data-i18n="s1.t">Telegram botlar</h3>
+        <p data-i18n="s1.d">…</p>
+        <ul class="chips"><li>Bot API</li><li>Payments</li><li>Mini Apps</li></ul>
+      </article>
+      <article class="svc tilt" data-fade>
+        <div class="svc-glare"></div>
+        <span class="svc-ico-wrap"><svg class="svc-ico" viewBox="0 0 120 120" aria-hidden="true">
+          <rect x="16" y="24" width="88" height="68" rx="8" fill="#22252A" filter="url(#ps-sm)"/>
+          <rect x="24" y="36" width="72" height="48" rx="4" fill="#F2F0EA" filter="url(#ps-sm)"/>
+          <rect x="30" y="44" width="30" height="32" rx="3" fill="#C6FF3D" filter="url(#ps-sm)"/>
+          <rect x="66" y="46" width="24" height="6" rx="3" fill="#2A2D33"/><rect x="66" y="58" width="18" height="6" rx="3" fill="#2A2D33"/>
+          <circle cx="28" cy="30" r="2.5" fill="#C6FF3D"/><circle cx="36" cy="30" r="2.5" fill="#F2F0EA"/>
+        </svg></span>
+        <h3 data-i18n="s2.t">Saytlar</h3>
+        <p data-i18n="s2.d">…</p>
+        <ul class="chips"><li>Landing</li><li>E-commerce</li><li>Admin panel</li></ul>
+      </article>
+      <article class="svc tilt" data-fade>
+        <div class="svc-glare"></div>
+        <span class="svc-ico-wrap"><svg class="svc-ico" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="46" fill="#22252A" filter="url(#ps-sm)"/>
+          <ellipse cx="60" cy="60" rx="34" ry="22" fill="#F2F0EA" filter="url(#ps-sm)"/>
+          <circle cx="60" cy="60" r="14" fill="#C6FF3D" filter="url(#ps-sm)"/>
+          <circle cx="60" cy="60" r="6" fill="#0A0A0B"/>
+          <path d="M22 30v-8h8M98 30v-8h-8M22 90v8h8M98 90v8h-8" fill="none" stroke="#C6FF3D" stroke-width="3"/>
+        </svg></span>
+        <h3 data-i18n="s3.t">Sun'iy intellekt</h3>
+        <p data-i18n="s3.d">…</p>
+        <ul class="chips"><li>YOLO</li><li>Face ID</li><li>LLM</li></ul>
+      </article>
+      <article class="svc tilt" data-fade>
+        <div class="svc-glare"></div>
+        <span class="svc-ico-wrap"><svg class="svc-ico" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="38" cy="44" r="20" fill="#22252A" filter="url(#ps-sm)"/>
+          <circle cx="82" cy="76" r="20" fill="#F2F0EA" filter="url(#ps-sm)"/>
+          <path d="M50 58 70 62" stroke="#C6FF3D" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="38" cy="44" r="8" fill="#C6FF3D"/>
+          <circle cx="82" cy="76" r="8" fill="#0A0A0B"/>
+          <circle cx="88" cy="32" r="10" fill="#C6FF3D" filter="url(#ps-sm)"/>
+          <circle cx="30" cy="90" r="7" fill="#F2F0EA" filter="url(#ps-sm)"/>
+        </svg></span>
+        <h3 data-i18n="s4.t">Integratsiya</h3>
+        <p data-i18n="s4.d">…</p>
+        <ul class="chips"><li>1C</li><li>CRM</li><li>REST API</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats" id="stats">
+  <div class="wrap">
+    <p class="eyebrow" data-fade><span class="dot"></span><span data-i18n="stats.eyebrow">Raqamlarda</span></p>
+    <div class="stat-grid">
+      <div class="stat" data-fade><div class="odo" data-value="100" data-suffix="+">100+</div><p data-i18n="stat1">topshirilgan loyiha</p></div>
+      <div class="stat" data-fade><div class="odo" data-value="4" data-suffix="+">4+</div><p data-i18n="stat2">jamoadagi mutaxassis</p></div>
+      <div class="stat" data-fade><div class="odo" data-value="56">56</div><p data-i18n="stat3">AI tahlilidagi kamera</p></div>
+      <div class="stat" data-fade><div class="odo" data-value="8">8</div><p data-i18n="stat4">AFRON AI'dagi filial</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects" id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-fade><span class="dot"></span><span data-i18n="projects.eyebrow">Loyihalarimiz</span></p>
+      <h2 class="sec-title" data-i18n="projects.title" data-split>Haqiqiy bizneslarda ishlayotgan tizimlar.</h2>
+    </div>
+
+    <div class="proj-grid">
+      <!-- AFRON AI -->
+      <button type="button" class="proj proj-feature" data-case="afron" data-cursor="open" data-fade>
+        <div class="proj-cover"><div class="cv-in">
+          <svg class="cv" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="800" height="440" fill="#121316"/>
+            <path d="M0 110h800M0 220h800M0 330h800M200 0v440M400 0v440M600 0v440" stroke="#2A2D33" stroke-width="1" opacity=".5"/>
+            <text x="28" y="420" font-family="JetBrains Mono, monospace" font-size="13" fill="#A3A39B">CAM 03 · AFRON · REC</text>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.3" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path d="M0 440V300c120-30 240 10 400-10s280-50 400-20v170z" fill="#1E2025" filter="url(#ps)"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.6" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect x="60" y="54" width="150" height="70" rx="14" fill="#F2F0EA" filter="url(#ps)"/>
+            <circle cx="182" cy="89" r="22" fill="#15161A"/><circle cx="182" cy="89" r="11" fill="#C6FF3D"/>
+            <rect x="120" y="124" width="18" height="40" fill="#D9D6CC"/>
+            <rect x="80" y="160" width="100" height="14" rx="7" fill="#D9D6CC" filter="url(#ps-sm)"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.6" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle class="rec" cx="82" cy="72" r="6" fill="#FF5A1F"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.9" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="500" cy="180" r="44" fill="#F2F0EA" filter="url(#ps)"/>
+            <path d="M420 420c0-90 36-150 80-150s80 60 80 150z" fill="#F2F0EA" filter="url(#ps)"/>
+            <circle cx="650" cy="214" r="32" fill="#D9D6CC" filter="url(#ps)"/>
+            <path d="M594 420c0-70 26-118 56-118s56 48 56 118z" fill="#D9D6CC" filter="url(#ps)"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.9" viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g class="detect">
+              <path d="M400 112h28M400 112v28M572 112h-28M572 112v28M400 420h28M400 420v-28M572 420h-28M572 420v-28" stroke="#C6FF3D" stroke-width="5" fill="none"/>
+              <rect x="400" y="82" width="172" height="26" fill="#FF5A1F"/>
+              <text x="410" y="100" font-family="JetBrains Mono, monospace" font-size="14" font-weight="500" fill="#0A0A0B">STAFF · 0.97 · 09:02</text>
+            </g>
+          </svg>
+          <div class="scan" aria-hidden="true"></div>
+        </div></div>
+        <div class="proj-meta">
+          <span class="proj-tag" data-i18n="p1.tag">AI · Kamera tahlili</span>
+          <h3 class="proj-title">AFRON AI</h3>
+          <p class="proj-desc" data-i18n="p1.d">…</p>
+          <span class="proj-open"><span data-i18n="projects.open">Batafsil</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        </div>
+      </button>
+
+      <!-- UCFOYDABOT -->
+      <button type="button" class="proj" data-case="ucf" data-cursor="open" data-fade>
+        <div class="proj-cover"><div class="cv-in">
+          <svg class="cv" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="400" fill="#121316"/></svg>
+          <svg class="cv cv-par" data-pd="0.3" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="470" cy="110" r="70" fill="#FF5A1F" filter="url(#ps)"/></svg>
+          <svg class="cv cv-par" data-pd="0.6" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect x="120" y="250" width="70" height="110" rx="6" fill="#2A2D33" filter="url(#ps)"/>
+            <rect x="220" y="190" width="70" height="170" rx="6" fill="#F2F0EA" filter="url(#ps)"/>
+            <rect x="320" y="120" width="70" height="240" rx="6" fill="#C6FF3D" filter="url(#ps)"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="1" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path d="M110 230 230 160l70 30 120-110" fill="none" stroke="#F2F0EA" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M392 76h36v36" fill="none" stroke="#F2F0EA" stroke-width="6" stroke-linecap="round"/>
+            <path d="M470 236c-14-14-36 0-24 18l24 22 24-22c12-18-10-32-24-18z" fill="#C6FF3D" filter="url(#ps-sm)"/>
+            <g transform="translate(468 300)"><ellipse rx="34" ry="20" fill="#F2F0EA" filter="url(#ps-sm)"/><circle r="9" fill="#0A0A0B"/></g>
+          </svg>
+        </div></div>
+        <div class="proj-meta">
+          <span class="proj-tag" data-i18n="p2.tag">Telegram bot · SMM</span>
+          <h3 class="proj-title">UCFOYDABOT</h3>
+          <p class="proj-desc" data-i18n="p2.d">…</p>
+          <span class="proj-open"><span data-i18n="projects.open">Batafsil</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        </div>
+      </button>
+
+      <!-- Attendance -->
+      <button type="button" class="proj" data-case="attend" data-cursor="open" data-fade>
+        <div class="proj-cover"><div class="cv-in">
+          <svg class="cv" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="400" fill="#121316"/></svg>
+          <svg class="cv cv-par" data-pd="0.3" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect x="60" y="60" width="200" height="280" rx="28" fill="#1E2025" filter="url(#ps)"/></svg>
+          <svg class="cv cv-par" data-pd="0.7" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="160" cy="200" r="78" fill="#F2F0EA" filter="url(#ps)"/>
+            <circle cx="134" cy="186" r="9" fill="#15161A"/><circle cx="186" cy="186" r="9" fill="#15161A"/>
+            <path d="M128 226c18 16 46 16 64 0" fill="none" stroke="#15161A" stroke-width="7" stroke-linecap="round"/>
+            <path d="M70 110v-22h22M250 110v-22h-22M70 290v22h22M250 290v22h-22" fill="none" stroke="#C6FF3D" stroke-width="6"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="1" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="420" cy="170" r="92" fill="#C6FF3D" filter="url(#ps)"/>
+            <circle cx="420" cy="170" r="72" fill="#15161A"/>
+            <g transform="translate(430 290)"><circle r="34" fill="#FF5A1F" filter="url(#ps-sm)"/><path d="M-14 0l9 10 19-20" fill="none" stroke="#0A0A0B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </svg>
+          <svg class="cv cv-par" data-pd="1" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="hand-m" d="M420 170V118" stroke="#F2F0EA" stroke-width="7" stroke-linecap="round"/>
+            <path d="M420 170h34" stroke="#FF5A1F" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="420" cy="170" r="7" fill="#F2F0EA"/>
+          </svg>
+        </div></div>
+        <div class="proj-meta">
+          <span class="proj-tag" data-i18n="p3.tag">Telegram bot · Face ID</span>
+          <h3 class="proj-title" data-i18n="p3.t">Davomat va ish haqi</h3>
+          <p class="proj-desc" data-i18n="p3.d">…</p>
+          <span class="proj-open"><span data-i18n="projects.open">Batafsil</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        </div>
+      </button>
+
+      <!-- AFRON website -->
+      <button type="button" class="proj proj-wide" data-case="site" data-cursor="open" data-fade>
+        <div class="proj-cover"><div class="cv-in">
+          <svg class="cv" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="800" height="400" fill="#121316"/></svg>
+          <svg class="cv cv-par" data-pd="0.35" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect x="110" y="60" width="440" height="300" rx="16" fill="#F2F0EA" filter="url(#ps)"/>
+            <rect x="110" y="60" width="440" height="34" rx="16" fill="#D9D6CC"/>
+            <circle cx="134" cy="77" r="6" fill="#FF5A1F"/><circle cx="154" cy="77" r="6" fill="#C6FF3D"/>
+            <g fill="#D9D6CC">
+              <rect x="270" y="116" width="120" height="96" rx="8"/><rect x="406" y="116" width="120" height="96" rx="8"/>
+              <rect x="134" y="228" width="120" height="96" rx="8"/><rect x="270" y="228" width="120" height="96" rx="8"/><rect x="406" y="228" width="120" height="96" rx="8"/>
+            </g>
+            <rect x="134" y="116" width="120" height="96" rx="8" fill="#C6FF3D"/>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.9" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <circle cx="600" cy="250" r="84" fill="#C6FF3D" filter="url(#ps)"/>
+            <g transform="translate(690 120)"><rect x="-40" y="-26" width="80" height="52" rx="12" fill="#FF5A1F" filter="url(#ps)"/><path d="M-20-4h40M-20 8h24" stroke="#0A0A0B" stroke-width="5" stroke-linecap="round"/></g>
+          </svg>
+          <svg class="cv cv-par" data-pd="0.9" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g transform="translate(600 250)"><g class="gear">
+              <path d="M-14-86h28l6 22 20 9 20-12 20 20-12 20 9 20 22 6v28l-22 6-9 20 12 20-20 20-20-12-20 9-6 22h-28l-6-22-20-9-20 12-20-20 12-20-9-20-22-6v-28l22-6 9-20-12-20 20-20 20 12 20-9z" fill="#C6FF3D"/>
+              <circle r="30" fill="#121316"/>
+            </g></g>
+          </svg>
+        </div></div>
+        <div class="proj-meta">
+          <span class="proj-tag" data-i18n="p4.tag">Sayt · Internet do'kon</span>
+          <h3 class="proj-title" data-i18n="p4.t">AFRON sayti</h3>
+          <p class="proj-desc" data-i18n="p4.d">…</p>
+          <span class="proj-open"><span data-i18n="projects.open">Batafsil</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-pin">
+    <div class="wrap process-head">
+      <p class="eyebrow" data-fade><span class="dot"></span><span data-i18n="process.eyebrow">Qanday ishlaymiz</span></p>
+      <h2 class="sec-title" data-i18n="process.title" data-split>G'oyadan ishga tushirishgacha to'rt qadam.</h2>
+    </div>
+    <div class="process-track-wrap">
+      <div class="process-track" id="processTrack">
+        <svg class="process-line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
+          <path class="pl-base" d="M0 20 H1000"/>
+          <path class="pl-draw" id="plDraw" d="M0 20 H1000" pathLength="1"/>
+        </svg>
+        <article class="step"><span class="step-n">01</span><h3 data-i18n="st1.t">Suhbat</h3><p data-i18n="st1.d">…</p></article>
+        <article class="step"><span class="step-n">02</span><h3 data-i18n="st2.t">Dizayn</h3><p data-i18n="st2.d">…</p></article>
+        <article class="step"><span class="step-n">03</span><h3 data-i18n="st3.t">Ishlab chiqish</h3><p data-i18n="st3.d">…</p></article>
+        <article class="step"><span class="step-n">04</span><h3 data-i18n="st4.t">Ishga tushirish</h3><p data-i18n="st4.d">…</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <svg class="contact-plane" viewBox="0 0 110 72" aria-hidden="true">
+    <polygon points="0,34 104,0 62,62" fill="#F2F0EA"/>
+    <polygon points="0,34 62,62 46,40" fill="#D9D6CC"/>
+    <polygon points="46,40 62,62 50,70" fill="#A9A69C"/>
+  </svg>
+  <div class="wrap contact-in">
+    <p class="eyebrow" data-fade><span class="dot"></span><span data-i18n="contact.eyebrow">Aloqa</span></p>
+    <h2 class="contact-title" data-i18n="contact.title" data-split>G'oyangiz bormi? Keling, quramiz.</h2>
+    <p class="contact-sub" data-i18n="contact.sub" data-fade>…</p>
+    <a class="btn btn-lime btn-xl magnetic" href="https://t.me/neindev" target="_blank" rel="noopener" data-fade>
+      <span class="btn-in"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z" fill="currentColor"/></svg><span data-i18n="hero.cta2">Telegramda yozish</span></span>
+    </a>
+    <p class="contact-handle" data-fade>t.me/<b>neindev</b></p>
+  </div>
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <a class="logo" href="#top" aria-label="Latuslab"><svg class="logo-mark"><use href="#mark"/></svg><span class="wordmark">latus<b>lab</b></span></a>
+      <p data-i18n="footer.line">O'zbekistondan bot, sayt va sun'iy intellekt.</p>
+      <p class="mono">© 2026 Latuslab</p>
+      <a class="to-top" href="#top" data-i18n="footer.top">Yuqoriga</a>
+    </div>
+  </footer>
+</section>
+</main>
+
+<!-- PROJECT VIEWER -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle" hidden>
+  <div class="viewer-panel" id="viewerPanel" data-lenis-prevent>
+    <div class="viewer-bar">
+      <span class="viewer-bar-title" id="viewerTitle"></span>
+      <button type="button" class="viewer-close magnetic" id="viewerClose"><span class="btn-in"><span data-i18n="v.close">Yopish</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.4"/></svg></span></button>
+    </div>
+    <div class="viewer-body" id="viewerBody"></div>
+  </div>
+</div>
+
+<!-- CASE TEMPLATES -->
+<template id="case-afron">
+  <div class="case" data-title="AFRON AI">
+    <header class="case-hero wrap">
+      <p class="eyebrow" data-v><span class="dot"></span><span data-i18n="p1.tag"></span></p>
+      <h2 class="case-title" data-v>AFRON AI</h2>
+      <p class="case-lead" data-v data-i18n="a.lead"></p>
+      <div class="facts" data-v>
+        <div class="fact"><b>8</b><span data-i18n="a.f1"></span></div>
+        <div class="fact"><b>~56</b><span data-i18n="a.f2"></span></div>
+        <div class="fact"><b>7</b><span data-i18n="a.f3"></span></div>
+        <div class="fact"><b>100</b><span data-i18n="a.f4"></span></div>
+      </div>
+    </header>
+
+    <section class="case-sec wrap reel-sec">
+      <h3 class="case-h" data-v data-i18n="v.reel"></h3>
+      <div class="reel" data-v>
+        <div class="reel-frame" data-reel="afron-ai-reel.html"><span class="reel-wait">AFRON AI · 0:48</span></div>
+        <div class="reel-bar">
+          <span class="reel-live"><i></i>AFRON AI · 0:48 · loop</span>
+          <button type="button" class="reel-fs"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.2"/></svg><span data-i18n="v.fullscreen"></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-sec wrap case-split">
+      <div>
+        <h3 class="case-h" data-v data-i18n="a.tracks"></h3>
+        <ol class="tracks">
+          <li data-v><span class="tk">01</span><span data-i18n="a.t1"></span></li>
+          <li data-v><span class="tk">02</span><span data-i18n="a.t2"></span></li>
+          <li data-v><span class="tk">03</span><span data-i18n="a.t3"></span></li>
+          <li data-v><span class="tk">04</span><span data-i18n="a.t4"></span></li>
+          <li data-v><span class="tk">05</span><span data-i18n="a.t5"></span></li>
+          <li data-v><span class="tk">06</span><span data-i18n="a.t6"></span></li>
+          <li data-v><span class="tk">07</span><span data-i18n="a.t7"></span></li>
+        </ol>
+      </div>
+      <div class="tg-mock" data-v>
+        <div class="tg-head">
+          <svg class="tg-ava"><use href="#mark"/></svg>
+          <div><b>AFRON AI</b><small>bot</small></div>
+          <span class="sample" data-i18n="m.sample"></span>
+        </div>
+        <div class="tg-msg">
+          <p class="tg-t" data-i18n="m.title"></p>
+          <ul class="tg-list">
+            <li><span data-i18n="m.late"></span><b>2</b></li>
+            <li><span data-i18n="m.uniform"></span><b>1</b></li>
+            <li><span data-i18n="m.rules"></span><b>3</b></li>
+            <li><span data-i18n="m.disc"></span><b>1</b></li>
+            <li class="top"><span data-i18n="m.top"></span><b>96 / 100</b></li>
+          </ul>
+          <div class="tg-frame"><span>CAM 05 · 14:32</span><i></i></div>
+          <div class="tg-btns"><span data-i18n="m.approve"></span><span data-i18n="m.reject"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-sec wrap">
+      <h3 class="case-h" data-v data-i18n="a.how"></h3>
+      <div class="flow" data-v>
+        <div class="flow-track"><i class="flow-dot"></i></div>
+        <div class="node"><span class="node-i">◉</span><b data-i18n="a.n1"></b><small data-i18n="a.n1d"></small></div>
+        <div class="node"><span class="node-i">▣</span><b data-i18n="a.n2"></b><small data-i18n="a.n2d"></small></div>
+        <div class="node node-hot"><span class="node-i">✦</span><b data-i18n="a.n3"></b><small data-i18n="a.n3d"></small></div>
+        <div class="node"><span class="node-i">₁c</span><b data-i18n="a.n4"></b><small data-i18n="a.n4d"></small></div>
+        <div class="node"><span class="node-i">➤</span><b data-i18n="a.n5"></b><small data-i18n="a.n5d"></small></div>
+      </div>
+    </section>
+
+    <section class="case-sec wrap">
+      <h3 class="case-h" data-v data-i18n="a.score"></h3>
+      <div class="score" data-v>
+        <div class="score-bar">
+          <i style="--w:30" class="s1"></i><i style="--w:15" class="s2"></i><i style="--w:20" class="s3"></i><i style="--w:20" class="s4"></i><i style="--w:15" class="s5"></i>
+        </div>
+        <ul class="score-legend">
+          <li><i class="s1"></i><span data-i18n="a.b1"></span><b>30</b></li>
+          <li><i class="s2"></i><span data-i18n="a.b2"></span><b>15</b></li>
+          <li><i class="s3"></i><span data-i18n="a.b3"></span><b>20</b></li>
+          <li><i class="s4"></i><span data-i18n="a.b4"></span><b>20</b></li>
+          <li><i class="s5"></i><span data-i18n="a.b5"></span><b>15</b></li>
+        </ul>
+        <p class="score-note" data-i18n="a.note"></p>
+      </div>
+    </section>
+
+    <section class="case-sec wrap">
+      <h3 class="case-h" data-v data-i18n="a.rollout"></h3>
+      <ol class="rollout">
+        <li data-v><small data-i18n="a.r1w"></small><b data-i18n="a.r1"></b></li>
+        <li data-v><small data-i18n="a.r2w"></small><b data-i18n="a.r2"></b></li>
+        <li data-v><small data-i18n="a.r3w"></small><b data-i18n="a.r3"></b></li>
+        <li data-v><small data-i18n="a.r4w"></small><b data-i18n="a.r4"></b></li>
+      </ol>
+      <div class="chips case-chips" data-v><span>Python</span><span>YOLO</span><span>face_recognition</span><span>Claude API</span><span>1C</span><span>Hikvision RTSP</span><span>Telegram Bot API</span></div>
+    </section>
+
+    <section class="case-cta wrap" data-v>
+      <p data-i18n="v.cta"></p>
+      <a class="btn btn-lime magnetic" href="https://t.me/neindev" target="_blank" rel="noopener"><span class="btn-in"><span data-i18n="v.ctaBtn"></span></span></a>
+    </section>
+  </div>
+</template>
+
+<template id="case-ucf">
+  <div class="case" data-title="UCFOYDABOT">
+    <header class="case-hero wrap">
+      <p class="eyebrow" data-v><span class="dot"></span><span data-i18n="p2.tag"></span></p>
+      <h2 class="case-title" data-v>UCFOYDABOT</h2>
+      <p class="case-lead" data-v data-i18n="p2.d"></p>
+      <a class="btn btn-ghost magnetic" data-v href="https://t.me/UCFOYDABOT" target="_blank" rel="noopener"><span class="btn-in"><span data-i18n="v.openBot"></span><span class="handle">@UCFOYDABOT</span></span></a>
+    </header>
+    <section class="case-sec wrap case-split">
+      <div>
+        <h3 class="case-h" data-v data-i18n="v.features"></h3>
+        <ol class="tracks">
+          <li data-v><span class="tk">01</span><span data-i18n="u.f1"></span></li>
+          <li data-v><span class="tk">02</span><span data-i18n="u.f2"></span></li>
+          <li data-v><span class="tk">03</span><span data-i18n="u.f3"></span></li>
+          <li data-v><span class="tk">04</span><span data-i18n="u.f4"></span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="case-h" data-v data-i18n="v.stack"></h3>
+        <div class="chips case-chips" data-v><span>Python</span><span>Telegram Bot API</span><span>SMM panel API</span><span>Telegram Stars</span><span>Render</span></div>
+      </div>
+    </section>
+    <section class="case-cta wrap" data-v>
+      <p data-i18n="v.cta"></p>
+      <a class="btn btn-lime magnetic" href="https://t.me/neindev" target="_blank" rel="noopener"><span class="btn-in"><span data-i18n="v.ctaBtn"></span></span></a>
+    </section>
+  </div>
+</template>
+
+<template id="case-attend">
+  <div class="case" data-title-key="p3.t">
+    <header class="case-hero wrap">
+      <p class="eyebrow" data-v><span class="dot"></span><span data-i18n="p3.tag"></span></p>
+      <h2 class="case-title" data-v data-i18n="p3.t"></h2>
+      <p class="case-lead" data-v data-i18n="p3.d"></p>
+    </header>
+    <section class="case-sec wrap case-split">
+      <div>
+        <h3 class="case-h" data-v data-i18n="v.features"></h3>
+        <ol class="tracks">
+          <li data-v><span class="tk">01</span><span data-i18n="w.f1"></span></li>
+          <li data-v><span class="tk">02</span><span data-i18n="w.f2"></span></li>
+          <li data-v><span class="tk">03</span><span data-i18n="w.f3"></span></li>
+          <li data-v><span class="tk">04</span><span data-i18n="w.f4"></span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="case-h" data-v data-i18n="v.stack"></h3>
+        <div class="chips case-chips" data-v><span>Node.js</span><span>Python · FastAPI</span><span>face_recognition</span><span>PostgreSQL</span><span>React</span><span>Telegram Bot API</span></div>
+      </div>
+    </section>
+    <section class="case-cta wrap" data-v>
+      <p data-i18n="v.cta"></p>
+      <a class="btn btn-lime magnetic" href="https://t.me/neindev" target="_blank" rel="noopener"><span class="btn-in"><span data-i18n="v.ctaBtn"></span></span></a>
+    </section>
+  </div>
+</template>
+
+<template id="case-site">
+  <div class="case" data-title-key="p4.t">
+    <header class="case-hero wrap">
+      <p class="eyebrow" data-v><span class="dot"></span><span data-i18n="p4.tag"></span></p>
+      <h2 class="case-title" data-v data-i18n="p4.t"></h2>
+      <p class="case-lead" data-v data-i18n="p4.d"></p>
+    </header>
+    <section class="case-sec wrap case-split">
+      <div>
+        <h3 class="case-h" data-v data-i18n="v.features"></h3>
+        <ol class="tracks">
+          <li data-v><span class="tk">01</span><span data-i18n="s.f1"></span></li>
+          <li data-v><span class="tk">02</span><span data-i18n="s.f2"></span></li>
+          <li data-v><span class="tk">03</span><span data-i18n="s.f3"></span></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="case-h" data-v data-i18n="v.stack"></h3>
+        <div class="chips case-chips" data-v><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span><span>Mobile-first</span></div>
+      </div>
+    </section>
+    <section class="case-cta wrap" data-v>
+      <p data-i18n="v.cta"></p>
+      <a class="btn btn-lime magnetic" href="https://t.me/neindev" target="_blank" rel="noopener"><span class="btn-in"><span data-i18n="v.ctaBtn"></span></span></a>
+    </section>
+  </div>
+</template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
